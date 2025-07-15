@@ -1,0 +1,40 @@
+body {
+  background-color: #f7ffcc;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  background-color: #f7ffcc;
+  color: blue;
+  text-align: center;
+  padding: 10px;
+  margin: 0;
+}
+
+.form {
+  width: 600px;
+  margin: 30px auto;
+  background-color: #f7ffcc;
+  padding: 20px;
+  box-shadow: 0 0 10px #999;
+  border-radius: 8px;
+  color: blue;
+}
+
+.form-table {
+  background-color: #f7ffcc;
+  width: 100%;
+}
+
+td {
+  vertical-align: top;
+  padding: 6px;
+}
+
+button {
+  padding: 6px 12px;
+  margin-right: 10px;
+  cursor: pointer;
+  box-shadow: 2px 2px 3px gray;
+  color: blue;
+}
