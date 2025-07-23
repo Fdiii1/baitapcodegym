@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="CircularArea(event)">
+      <label for="radius">Nhập bán kính hình tròn:</label><br />
+      <input type="number" id="radius" placeholder="Bán kính" /><br /><br />
+      <input type="submit" value="Tính diện tích" /><br />
+      <label for="area">Chu vi hình tròn:</label><br />
+      <input type="number" id="area" readonly /><br /><br />
+    <script>
+      function CircularArea(event) {
+        event.preventDefault();
+        const pi = 3.14;
+        let radius = parseFloat(document.getElementById("radius").value);
+
+        if (isNaN(radius) || radius < 0) {
+          alert("Vui lòng nhập bán kính hợp lệ.");
+        event.preventDefault();
+          return;
+        }
+        let area = 2*pi * radius ;
+        document.getElementById("area").value = area.toFixed(2);
+      }
+    </script>
+  </body>
+</html>

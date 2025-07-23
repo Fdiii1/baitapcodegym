@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="TemperatureChange(event)">
+      <input type="number" id="Celsius" placeholder="Độ c (Celsius)" />
+      <button class="btn">Nhập</button>
+      <div id="fahrenheit"></div>
+    </form>
+    <script>
+      function TemperatureChange(event) {
+        event.preventDefault();
+        let celsius = parseFloat(document.getElementById("Celsius").value);
+        if (isNaN(celsius)) {
+          alert("Vui lòng nhập một giá trị hợp lệ.");
+          event.preventDefault();
+          return;
+        }
+        let fahrenheit = (celsius * 9) / 5 + 32;
+        document.getElementById(
+          "fahrenheit"
+        ).innerText = `Kết quả : ${fahrenheit.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>

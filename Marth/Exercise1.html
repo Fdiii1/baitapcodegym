@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="validateForm(event)">
+      <label for="">Nhập điểm vật lý:</label><br />
+      <input type="number" id="Physics" /><br /><br />
+
+      <label for="">Nhập điểm hóa học:</label><br />
+      <input type="number" id="Chemistry" /><br /><br />
+
+      <label for="">Nhập điểm sinh học:</label><br />
+      <input type="number" id="Biology" /><br /><br />
+
+      <input type="submit" value="Tính" id="result" /><br />
+
+      <label for="">Kết quả tính tổng</label><br />
+      <input type="number" id="average" /><br /><br />
+      <label for="">Kết quả tính trung bình:</label><br />
+      <input type="number" id="average1" /><br /><br />
+    </form>
+    <script>
+      function validateForm(event) {
+        event.preventDefault();
+        let physics = parseFloat(document.getElementById("Physics").value);
+        let chemistry = parseFloat(document.getElementById("Chemistry").value);
+        let biology = parseFloat(document.getElementById("Biology").value);
+
+        if (isNaN(physics) || isNaN(chemistry) || isNaN(biology)) {
+          alert("Vui lòng nhập điểm hợp lệ cho tất cả các môn học.");
+          event.preventDefault();
+          return;
+        }
+        let average = physics + chemistry + biology;
+        let average1 = average / 3;
+
+        document.getElementById("average").value = average;
+        document.getElementById("average1").value = average1;
+      }
+    </script>
+  </body>
+</html>
