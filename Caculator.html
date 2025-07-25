@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ứng dụng máy tính</title>
+  </head>
+  <body>
+    <h1>Caculator</h1>
+    <form action="" onsubmit="event.preventDefault();">
+      <div id="">
+        <label for="number1" style="padding-bottom: 2px">Số thứ nhất:</label
+        ><br />
+        <input
+          type="number"
+          id="number1"
+          placeholder="Nhập số thứ nhất"
+          required
+        />
+      </div>
+      <br />
+      <div id="">
+        <label for="number2">Số thứ hai:</label><br />
+        <input
+          type="number"
+          id="number2"
+          placeholder="Nhập số thứ hai"
+          required
+        />
+      </div>
+      <br />
+      <button type="button" onclick="calculate('Addition')">Addition(+)</button>
+      <button type="button" onclick="calculate('Subtraction')">
+        Subtraction(-)
+      </button>
+      <button type="button" onclick="calculate('Multiplication')">
+        Multiplication(X)
+      </button>
+      <button type="button" onclick="calculate('Divsion')">Divsion(/)</button>
+      <div id="result"></div>
+    </form>
+
+    <script>
+      function calculate(operation) {
+        let number1 = parseFloat(document.getElementById("number1").value);
+        let number2 = parseFloat(document.getElementById("number2").value);
+
+        let result;
+
+        switch (operation) {
+          case "Addition":
+            result = number1 + number2;
+            break;
+          case "Subtraction":
+            result = number1 - number2;
+            break;
+          case "Multiplication":
+            result = number1 * number2;
+            break;
+          case "Divsion":
+            if (number2 === 0) {
+              alert("Không thể chia cho 0");
+              return;
+            }
+            result = number1 / number2;
+            break;
+          default:
+            alert("Vui lòng chọn một phép toán");
+            return;
+        }
+
+        document.getElementById("result").innerText = `Kết quả: ${result}`;
+      }
+    </script>
+  </body>
+</html>
