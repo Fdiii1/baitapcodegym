@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="" onsubmit="CurrencyConverter(event)">
+      <label for="">Amount</label><br />
+      <input type="number" id="amount" placeholder="Enter amount" />
+      <label for=""> From Currency</label>
+      <select id="fromCurrency">
+        <option value="USD">USD</option>
+        <option value="VND">VND</option>
+      </select>
+      <label for="">To Currency</label>
+      <select id="toCurrency">
+        <option value="USD">USD</option>
+
+        <option value="VND">VND</option>
+      </select>
+
+      <button class="btn">Convert</button>
+      <div id="result"></div>
+    </form>
+    <script>
+      function CurrencyConverter(event) {
+        event.preventDefault();
+        let amount = parseFloat(document.getElementById("amount").value);
+        let fromCurrency = document.getElementById("fromCurrency").value;
+        let toCurrency = document.getElementById("toCurrency").value;
+        let result;
+        if (isNaN(amount)) {
+          document.getElementById("result").innerText =
+            "Vui lòng nhập số hợp lệ.";
+          return;
+        }
+        if (fromCurrency === "USD" && toCurrency === "VND") {
+          result = amount * 23000; // Example conversion rate
+        } else if (fromCurrency === "VND" && toCurrency === "USD") {
+          result = amount / 23000; // Example conversion rate
+        } else {
+          result = amount; // Same currency, no conversion
+        }
+        document.getElementById(
+          "result"
+        ).innerText = `Kết quả : ${result.toFixed(2)}`;
+      }
+    </script>
+  </body>
+</html>
