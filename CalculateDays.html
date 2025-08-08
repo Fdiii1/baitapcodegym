@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Tính ngày</h1>
+    <input type="number" id="moth" placeholder="Nhập số tháng vào" />
+    <button id="" onclick="check()">Tính số ngày</button> <br /><br />
+    <div id="result">
+      <p>Nơi hiện kết quả</p>
+    </div>
+  </body>
+  <script>
+    let moth_1 = "1";
+    let moth_2 = "2";
+    let moth_3 = "3";
+    let moth_4 = "4";
+    let moth_5 = "5";
+    let moth_6 = "6";
+    let moth_7 = "7";
+    let moth_8 = "8";
+    let moth_9 = "9";
+    let moth_10 = "10";
+    let moth_11 = "11";
+    let moth_12 = "12";
+    function check() {
+      let moth = document.getElementById("moth").value;
+
+      switch (moth) {
+        case moth_1:
+        case moth_3:
+        case moth_5:
+        case moth_7:
+        case moth_8:
+        case moth_10:
+        case moth_12:
+          document.getElementById("result").innerHTML =
+            "Tháng " + moth + " có 31 ngày";
+          break;
+        case moth_4:
+        case moth_6:
+        case moth_9:
+        case moth_11:
+          document.getElementById("result").innerHTML =
+            "Tháng " + moth + " có 30 ngày";
+          break;
+        case moth_2:
+          document.getElementById("result").innerHTML =
+            "Tháng " + moth + " có 28 ngày hoặc 27";
+          break;
+        default:
+          document.getElementById("result").innerHTML = "Vui lòng nhập lại";
+      }
+    }
+  </script>
+</html>
